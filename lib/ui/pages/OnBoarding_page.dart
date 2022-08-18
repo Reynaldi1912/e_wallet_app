@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_wallet_app/shared/theme.dart';
+import 'package:e_wallet_app/ui/pages/FirstPage.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding_page extends StatefulWidget{
@@ -13,14 +14,14 @@ class OnBoarding_page extends StatefulWidget{
     CarouselController carouselController = CarouselController();
 
     List<String> titles = [
-      'Grow Your \n Financial Today',
-      'Build From \n Zero to Freedom',
-      'Start Together',
+      'Pengalaman Pengguna \n Yang Baik',
+      'Mejamin Keamanan Data \n Pengguna Aplikasi',
+      'Ayo Mulai !',
     ];
     List<String> subtitles = [
-      'Our system is helping to \n achive a better goal',
-      'Our System give you a freedom \n to save or pull your money',
-      'We Will guide you to where \n you wanted it too \nLets Get Started',
+      'Menabung dan Menyimpan \n Uang dengan Mudah',
+      'User Tidak Perlu Khawatir \n Uang Akan Hilang Atau Terpotong',
+      'Bergegaslah Mendaftar \n Aplikasi Kami Akan Membantu \nManajemen Finansial Anda',
     ];
   @override
   Widget build(BuildContext context){
@@ -33,15 +34,15 @@ class OnBoarding_page extends StatefulWidget{
             CarouselSlider(
               items: [
                 Image.asset(
-                  'assets/img_onboarding.jpg',
+                  'assets/img_onboarding.png',
                   height: 331,
                   ),
                    Image.asset(
-                  'assets/img_onboarding.jpg',
+                  'assets/img_onboarding2.png',
                   height: 331,
                   ),
                    Image.asset(
-                  'assets/img_onboarding.jpg',
+                  'assets/img_onboarding3.png',
                   height: 331,
                   ),
                 ], 
@@ -105,7 +106,10 @@ class OnBoarding_page extends StatefulWidget{
                         height: 50, 
                         child: TextButton(
                           onPressed: (){
-                            carouselController.nextPage();
+                             Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const FirstPage()),
+                            );
                           }, 
                           style: TextButton.styleFrom(
                             backgroundColor : purpleColor
