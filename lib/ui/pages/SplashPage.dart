@@ -4,34 +4,25 @@ import 'package:e_wallet_app/shared/theme.dart';
 import 'package:e_wallet_app/ui/pages/OnBoarding_page.dart';
 import 'package:flutter/material.dart';
 
-class SplashPage extends StatefulWidget{
+class SplashPage extends StatelessWidget{
   const SplashPage({Key ? key}) : super(key: key);
 
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage>{
-
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
+  Widget build(BuildContext context){
+    Size screenSize = MediaQuery.of(context).size;
+    // Orientation orientation = MediaQuery.of(context).orientation;
     Timer(const Duration(seconds: 2), (){
       Navigator.push(
         context, MaterialPageRoute(
           builder: (context) =>const OnBoarding_page(),
         ));
     });
-  }
-
-  @override
-  Widget build(BuildContext context){
     return Scaffold(
+      
       backgroundColor: darkBackgroundColor,
       body: Center(
         child: Container(
-          width: 155,
+          width: screenSize.width,
           height: 55,
           decoration: const BoxDecoration(
             image : DecorationImage(
